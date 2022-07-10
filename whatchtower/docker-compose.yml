@@ -7,11 +7,11 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - /etc/timezone:/etc/timezone:es
+      - ~/.docker/config.json:/config.json
     environment:
       - WATCHTOWER_CLEANUP=true
       - WATCHTOWER_LABEL_ENABLE=true
       - WATCHTOWER_INCLUDE_RESTARTING=true
       - WATCHTOWER_POLL_INTERVAL=900
-      - ~/.docker/config.json:/config.json
     labels:
       - "com.centurylinklabs.watchtower.enable=true"
